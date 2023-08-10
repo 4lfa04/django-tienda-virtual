@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path
 import tienda_virtual.views as views
 
+
+#Cosas Nuevas y raras
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.loading),
@@ -31,3 +35,6 @@ urlpatterns = [
     path('car', views.seeCarrito),
     path('search', views.search)
 ]
+
+#cosas nuevas y raras
+urlpatterns += staticfiles_urlpatterns()
