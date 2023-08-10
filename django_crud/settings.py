@@ -82,22 +82,22 @@ WSGI_APPLICATION = 'django_crud.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+ DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
+#     'default' : dj_database_url.config(
+#         default='postgresql://postgres:postgres@localhost/postgres',
+#         conn_max_age=600
+#     )
 # }
 
 DATABASES = {
-    'default' : dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost/postgres',
-        conn_max_age=600
-    )
-}
-
-DATABASES = {
-    "default" : dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    "default" : dj_database_url.parse("postgres://db_tienda_virtual_user:skWBLcHb57RwbwNarQD7aFSE8Mf5qmAK@dpg-cja4395m2m9c73bok2gg-a.oregon-postgres.render.com/db_tienda_virtual")
 }
 
 
