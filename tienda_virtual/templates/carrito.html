@@ -1,0 +1,37 @@
+{% extends 'html.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="body body-shop">
+    <div class="zona-mostrar zona-shop" >
+        <span class="shop-entry">Tus Objetos en el Carrito</span>
+        <span class="shop-entry">Total: ${{ total }}</span>
+        <div class="objetos">
+            {% if total == 0 %}
+            Vaya, no tienes nada en el carrito
+            {% endif %}
+            {% for objeto in objetos %}
+            {% if objeto.cantidad != '0' %}
+            
+            <a class="card-objeto" href="productos/{{ objeto.pk }}">
+                <!-- <div class="card-objeto"> -->
+                    {% if objeto.foto == None %}
+                    <img src="{% static './404Foto.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static objeto.foto %}" alt="">
+                    {% endif %}
+                    <div class="objeto-name">{{ objeto.objeto }}</div>
+                    <div class="objeto-price">Precio: ${{ objeto.precio }}</div>
+                    <div class="objeto-price">Cantidad: {{ objeto.cantidad }}</div>
+                    <!-- </div> -->
+                </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+    {% comment %} <script src= {% static 'js/script.js' %}></script> {% endcomment %}
+{% endblock content %}

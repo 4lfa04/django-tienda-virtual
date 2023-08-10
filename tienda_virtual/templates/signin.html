@@ -1,0 +1,26 @@
+{% extends 'html.html' %}
+{% load static %}
+{% block content %}
+
+
+<body>
+  
+  <div class="body">
+    <div class="zona-mostrar">
+      <form action="" method='POST'>
+        {% csrf_token %}
+        <div class="name-zone">
+          <label for="" class="form-label">Nombre</label>
+          <input type="text" name="username" id="" class="form-control" placeholder="Nombre" aria-describedby="helpId">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" name="password" id="" placeholder="Contraseña">
+        </div>
+        <button type="submit" class="btn btn-primary">Revisar</button>
+      </form>
+    </div>
+  </div>
+    
+  
+  {% endblock content %}

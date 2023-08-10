@@ -1,0 +1,453 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #5271ff;
+    /* background-image: url(file:///C:/Fabian/Programacion/python/DJANGO/Tienda%20Virtual%201/tienda_virtual/templates/pretty/fondo.png); */
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Zona de Navegacion */
+.header {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-cartel {
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.menu-navegacion {
+    display: none;
+}
+
+.botonera-right {
+    margin-right: 15px;
+}
+
+.botonera-right > button{
+    border: none;
+    background-color: transparent;
+    font-size: x-large;
+}
+
+
+
+.body {
+    position: relative;
+    top: 40px;
+    height: 90vh;
+    overflow: auto;
+}
+
+.zona-mostrar {
+    position: relative;
+    top: 10vh;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    /* margin-top: 20px; */
+    background-color: #5272ff94;
+    border-radius: 50px 50px 0 50px;
+    backdrop-filter: blur(10px);
+}
+
+.zona-mostrar > div {
+    display: grid;
+    grid-template-rows: auto auto;
+    /* flex-direction: column; */
+}
+
+.zona-mostrar div > span {
+    font-size: 7vh;
+    font-weight: bold;
+}
+
+/* .zona-mostrar div > input {
+    background-color: transparent;
+} */
+
+.zona-mostrar > img {
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 1px #000);
+}
+
+.social-links {
+    position: absolute;
+    right: 1vw;
+    top: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links > a {
+    font-size: xx-large;
+    color: #222;
+    opacity: .8;
+}
+
+.demostration-input, .zona-mostrar form div > input {
+    background-color: white;
+    width: 80%;
+    padding: 10px;
+    position: relative;
+    /* top: 100%; */
+    color: #222;
+    font-size: xx-large;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px 50px 50px 0px;
+    outline: none;
+}
+
+#button-comprar {
+    margin-top: 10px;
+    background-color: #5272ff94;
+    color: #ffffff;
+    width: 80%;
+    padding: 10px;
+    font-size: xx-large;
+    border: none;
+    text-align: end;
+    font-weight: bold;
+    border-radius: 50px 50px 0px 50px;
+}
+
+/* .zona-mostrar form div::before {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: red;
+    display: inline-block;
+} */
+
+
+/* Signin Form */
+
+.zona-mostrar > form {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    flex-direction: column;
+    /* align-items: flex-end; */
+}
+
+
+.zona-mostrar form > div {
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+}
+
+.zona-mostrar form div > label {
+    font-size: 7vh;
+    font-weight: bold;
+}
+
+.zona-mostrar form div > input {
+    font-size: x-large;
+    width: 100%;
+}
+
+.zona-mostrar form > button {
+    border: none;
+    border-radius: 50px 50px 0 50px;
+    background-color: #fff;
+    color: #7db7c7;
+    font-size: x-large;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    transition: all .3s;
+}
+
+.zona-mostrar form > button:hover {
+    background-color: #7db7c7;
+    color: #fff;
+}
+
+
+.zona-mostrar-signup {
+    height: 80vh;
+}
+
+.mensage {
+    position: absolute;
+    top:6vh;
+    z-index: 100;
+    left: 6vw;
+    background-color: #0c5a84;
+    padding: 5vh;
+    border-radius: 0 50px 50px 50px;
+}
+
+.mensage span {
+    font-size: large;
+}
+
+
+/* Tienda */
+.body-shop {
+    padding: 15px;
+}
+
+.zona-shop {
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+    top: 0vh;
+    height: 80vh;
+}
+
+.shop-entry {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.zona-shop .objetos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.zona-shop .objetos .card-objeto {
+    background-color: #ffffff94;
+    width: 20vw;
+    padding: 0 0 20px 0;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.zona-shop .objetos .card-objeto img {
+    width: 100%;
+    height: 350px;
+    object-fit: scale-down;
+}
+
+.objeto-name, .objeto-price {
+    position: relative;
+    padding-left: 1vw;
+    color: #222;
+    font-size: x-large;
+    font-weight: bold;
+}
+.objeto-name {
+    font-size: xx-large;
+}
+.objeto-price {
+    font-size: x-large;
+}
+
+
+/* Etiquetas */
+.etiquetas {
+    display: flex;
+}
+
+.etiqueta {
+    background-color: #ffffff94;
+    padding: 5px;
+    border-radius: 50px;
+    border: #22222294 solid 2px;
+}
+
+
+#masomenos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: max-content;
+    height: max-content;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+#masomenos div {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    height: 100%;
+    background-color: #ffffff94;
+    border: none;
+    padding: 5px;
+    transition: all .3s;
+    text-align: center;
+    vertical-align: middle;
+    color: #22222294;
+}
+#masomenos div:first-child {
+    border-radius: 50px 0 0 50px;
+}
+.mas {
+    border-radius: 0px 50px 50px 0px;
+}
+#masomenos div:hover {
+    background-color: #5272ff94;
+}
+#masomenos label {
+    vertical-align: middle;
+    background-color: #ffffff94;
+    font-size: xx-large;
+    padding: 0 10px;
+    vertical-align: middle;
+    color: #22222294;
+}
+
+#masomenos .precio-total {
+    background-color: transparent;
+}
+
+/* Responsive Zone */
+@media screen and (max-width: 768px) {
+    .menu-navegacion {
+        display: block;
+        position: relative;
+        right: 10vw;
+        top: 1vh;
+        font-size: x-large;
+    }
+    
+    .botonera-right {
+        display: flex;
+        flex-direction: column;
+        right: -200px;
+        top: 6vh;
+        background-color: #5272ff94;
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 50px 0 50px 50px;
+        position: fixed;
+        transition: all .6s;
+    }
+
+    .botonera-right a {
+        margin: 5px;
+    }
+
+    .botonera-right-desplegada {
+        display: flex;
+        flex-direction: column;
+        right: 10vw;
+    }
+
+    .zona-mostrar-home {
+        display: flex;
+        flex-direction: column;
+        top: 5vh;
+        height: 70vh;
+        border-radius: 50px 50px 0 0;
+    }
+
+    .zona-mostrar-home > div {
+        justify-items: center;
+    }
+
+    .zona-mostrar-home div > span {
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    .zona-mostrar > img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        filter: drop-shadow(1px 1px 1px #000);
+    }
+
+    .demostration-input{
+        width: 90%;
+    }
+
+    #button-comprar {
+        width: 90%;
+        margin-bottom: 30px;
+        background-color: #22222294;
+    }
+
+    .social-links {
+        position: absolute;
+        bottom: 50px;
+        top: auto;
+        right: 35vw;
+        flex-direction: row;
+    }
+
+    /* Tienda */
+
+    .zona-shop {
+        height: 70vh;
+        text-align: center;
+    }
+
+    .zona-shop .objetos {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .zona-shop .objetos .card-objeto {
+        width: 100%;
+    }
+
+    /* Articulo */
+    .zona-mostrar-articulo {
+        display: flex;
+        flex-direction: column;
+        top: 5vh;
+        height: 70vh;
+        border-radius: 50px 50px 50px 50px;
+        padding-bottom: 25px;
+    }
+    .zona-mostrar-articulo > div {
+        justify-items: center;
+    }
+
+    .zona-mostrar-articulo div > span {
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    .zona-mostrar-articulo > img {
+        width: 100%;
+        height: 50%;
+        object-fit: scale-down;
+        filter: drop-shadow(1px 1px 1px #000);
+    }
+
+    #masomenos {
+        width: 70vw;
+    }
+    #masomenos div, #masomenos label {
+        font-size: large;
+        vertical-align: middle;
+    }
+    #masomenos label {        
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,31 @@
+{% extends 'html.html' %}
+{% load static %}
+{% block content %}
+
+<div class="body">
+    <div class="zona-mostrar zona-mostrar-signup">
+        <form action="" method='POST'>
+            {% csrf_token %}
+            <div class="name-zone">
+              <label for="" class="form-label">Nombre</label>
+              <input type="text" name="username" id="" class="username" placeholder="Nombre" aria-describedby="helpId">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Contraseña</label>
+              <input type="password" class="password1" name="password1" placeholder="Contraseña">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Repetir Contraseña</label>
+                <input type="password" class="password2" name="password2" placeholder="Repetir Contraseña">
+              </div>
+            <button type="submit" class="checkButton" disabled>Revisar</button>
+          </form>
+    </div>
+</div>
+
+<script src="{% static 'js/passwordSheck.js' %}"></script>
+
+
+
+
+{% endblock %}

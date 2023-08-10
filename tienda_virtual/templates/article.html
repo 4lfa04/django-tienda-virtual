@@ -1,0 +1,40 @@
+{% extends 'html.html' %}
+{% load static %}
+{% block content %}
+
+
+    <div class="body">
+        <div class="zona-mostrar zona-mostrar-articulo">
+            {% if objeto.foto == None %}
+            <img src={% static './404Foto.png' %} alt="">
+            {% else %}
+            <img src={% static objeto.foto %} alt="">
+            {% endif %}
+            <div>
+                <span>{{ objeto.objeto }}</span>
+                <span class='precio'>Precio: ${{ objeto.precio }}</span>
+                {% if objeto.propietario == None %}
+                <span>Dueño: ...</span>
+                {% else %}
+                <span>Dueño: {{ objeto.propietario }}</span>
+                {% endif %}
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div id="masomenos">
+                        <div class="menos">-</div>
+                        <label class="conteo">{{ cantidad }}</label>
+                        <div class="mas">+</div>
+                        <label class="precio-total">0</label>                        
+                    </div>
+                    <input type="text" name="articulo" hidden value="{{ objeto.objeto }}">
+                    <input class="data" name="cantidad" type="text" hidden value="{{ cantidad }}">
+                    <button type="submit">Comprar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src= {% static 'js/conteo.js' %}></script>
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends 'html.html' %}
+{% load static %}
+{% block content %}
+
+<div class="body body-shop">
+    <div class="zona-mostrar zona-shop">
+        <span class="shop-entry">Tenemos estos productos a tu dispocición</span>
+        <div class="etiquetas">
+            {% for etiqueta in etiquetas %}
+                <label class="etiqueta">electrodomesticos</label>
+            {% endfor %}
+        </div>
+        <div class="objetos">
+            {% for objeto in objetos %}
+            <a class="card-objeto" href="productos/{{ objeto.pk }}">
+                <!-- <div class="card-objeto"> -->
+                    {% if objeto.foto == None %}
+                    <img src="{% static './404Foto.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static objeto.foto %}" alt="">
+                    {% endif %}
+                    <div class="objeto-name">{{ objeto.objeto }}</div>
+                    <div class="objeto-price">Precio: ${{ objeto.precio }}</div>
+                <!-- </div> -->
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

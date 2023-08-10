@@ -1,0 +1,20 @@
+{% extends 'html.html' %}
+{% load static %}
+{% block content %}
+
+<div class="body">
+    <div class="zona-mostrar zona-mostrar-account">
+        <div class="user">
+            <img src="" alt="">
+            <span>Hola: <b>{{ user.username }}</b></span>
+            <span>Billetera: {{ secret_wallet }}</span>
+            <span>Fondos: ${{ cash }}</span>
+            <a href="signout">cerrar</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
