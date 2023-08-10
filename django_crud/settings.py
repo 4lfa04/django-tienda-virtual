@@ -96,9 +96,9 @@ DATABASES = {
 #     )
 # }
 
-DATABASES = {
-    "default" : dj_database_url.parse("postgres://db_tienda_virtual_user:skWBLcHb57RwbwNarQD7aFSE8Mf5qmAK@dpg-cja4395m2m9c73bok2gg-a.oregon-postgres.render.com/db_tienda_virtual")
-}
+# DATABASES = {
+#     "default" : dj_database_url.parse("postgres://db_tienda_virtual_user:skWBLcHb57RwbwNarQD7aFSE8Mf5qmAK@dpg-cja4395m2m9c73bok2gg-a.oregon-postgres.render.com/db_tienda_virtual")
+# }
 
 
 # Password validation
